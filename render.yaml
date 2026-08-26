@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: 1st-vid2txt
+    runtime: node
+    buildCommand: apt-get install -y ffmpeg && npm install
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+    autoDeploy: true
