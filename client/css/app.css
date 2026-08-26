@@ -1,0 +1,64 @@
+/* app.css — minimal additions on top of Tailwind */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent body scroll when editor is open */
+body.editor-active {
+  overflow: hidden;
+}
+
+/* Video preview fills container maintaining aspect ratio */
+#video-preview {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* Crop canvas overlays the video exactly */
+#crop-canvas {
+  pointer-events: none;
+}
+
+/* Text block item hover */
+.text-block-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Draggable text overlay */
+.text-overlay-block {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  white-space: pre;
+  pointer-events: all;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: border-color 0.1s;
+}
+
+.text-overlay-block.selected {
+  border-color: rgba(99, 102, 241, 0.8);
+}
+
+.text-overlay-block:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* Timeline handle cursor */
+#handle-start,
+#handle-end {
+  touch-action: none;
+}
+
+/* Number inputs in crop bar */
+#crop-bar input[type="number"] {
+  -moz-appearance: textfield;
+}
+#crop-bar input[type="number"]::-webkit-outer-spin-button,
+#crop-bar input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
